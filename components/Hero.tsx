@@ -2,50 +2,57 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <Image
-        src="/images/hero.jpg"
-        alt="Lush green lawn with manicured garden beds"
-        fill
-        priority
-        className="object-cover"
-      />
-
-      {/* Green overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/70 via-forest/50 to-stone-800/60" />
-
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <p className="mb-4 animate-fade-in-up text-sm font-bold uppercase tracking-[0.3em] text-sage">
+    <section className="relative flex min-h-screen overflow-hidden">
+      {/* Left content panel */}
+      <div className="relative z-10 flex w-full flex-col justify-center bg-forest-dark px-8 py-32 md:w-1/2 md:px-16 lg:px-20">
+        <p className="animate-fade-in-up text-sm font-bold uppercase tracking-[0.3em] text-sage">
           Hudson Valley, NY
         </p>
-        <h1 className="animate-fade-in-up delay-100 text-5xl font-bold leading-tight text-white md:text-7xl">
+        <h1 className="mt-4 animate-fade-in-up delay-100 font-serif text-5xl font-bold leading-tight text-white lg:text-7xl">
           Your Landscape,
           <br />
           <span className="text-sage">Perfected.</span>
         </h1>
-        <p className="mx-auto mt-6 max-w-xl animate-fade-in-up delay-200 text-lg text-stone-200 md:text-xl">
+        <p className="mt-6 max-w-md animate-fade-in-up delay-200 text-lg leading-relaxed text-white/70">
           Professional landscaping, lawn care, and outdoor design for homes and
           businesses across the Hudson Valley. Quality work you can count on.
         </p>
-        <div className="mt-10 flex animate-fade-in-up delay-300 flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-10 flex animate-fade-in-up delay-300 flex-col gap-4 sm:flex-row">
           <a
             href="#contact"
-            className="rounded-full bg-forest px-8 py-3.5 text-lg font-bold uppercase tracking-wider text-white transition-all hover:bg-forest-dark hover:shadow-lg hover:shadow-forest/25"
+            className="rounded-full bg-white px-8 py-3.5 text-center text-lg font-bold uppercase tracking-wider text-forest transition-all hover:bg-sage-light hover:shadow-lg"
           >
             Free Estimate
           </a>
           <a
             href="#services"
-            className="rounded-full border-2 border-white/30 px-8 py-3.5 text-lg font-semibold text-white transition-all hover:border-sage hover:bg-sage/10"
+            className="rounded-full border-2 border-white/30 px-8 py-3.5 text-center text-lg font-semibold text-white transition-all hover:border-sage hover:bg-sage/10"
           >
             Our Services
           </a>
         </div>
       </div>
 
+      {/* Right image panel */}
+      <div className="absolute inset-0 md:relative md:w-1/2">
+        <Image
+          src="/images/hero.jpg"
+          alt="Lush green lawn with manicured garden beds"
+          fill
+          priority
+          className="object-cover"
+        />
+        {/* Dark overlay on mobile only (when image is behind text) */}
+        <div className="absolute inset-0 bg-forest-dark/80 md:hidden" />
+      </div>
+
+      {/* Curved divider between panels — desktop only */}
+      <div className="pointer-events-none absolute inset-y-0 left-[46%] z-20 hidden w-[12%] md:block">
+        <div className="h-full w-full bg-forest-dark" style={{ clipPath: "ellipse(70% 55% at 0% 50%)" }} />
+      </div>
+
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-8 z-20 animate-bounce md:left-16">
         <svg
           className="h-6 w-6 text-white/50"
           fill="none"

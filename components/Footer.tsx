@@ -2,18 +2,18 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-stone-800 px-6 py-16 text-white">
+    <footer className="bg-forest px-6 py-16 text-white">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 md:grid-cols-4">
           {/* Logo & Description */}
           <div className="md:col-span-1">
             <Link
               href="/"
-              className="text-2xl font-bold tracking-tight"
+              className="font-serif text-2xl font-bold tracking-tight"
             >
               Green<span className="text-sage"> Ridge</span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-stone-400">
+            <p className="mt-4 text-sm leading-relaxed text-white/50">
               Professional landscaping services for the Hudson Valley.
               Quality work, honest service, beautiful results.
             </p>
@@ -24,7 +24,7 @@ export default function Footer() {
             <h4 className="font-bold uppercase tracking-wider text-sage">
               Explore
             </h4>
-            <ul className="mt-4 space-y-2 text-sm text-stone-400">
+            <ul className="mt-4 space-y-2 text-sm text-white/50">
               <li>
                 <a
                   href="/#about"
@@ -65,7 +65,7 @@ export default function Footer() {
             <h4 className="font-bold uppercase tracking-wider text-sage">
               Service Area
             </h4>
-            <ul className="mt-4 space-y-2 text-sm text-stone-400">
+            <ul className="mt-4 space-y-2 text-sm text-white/50">
               <li>Hudson, NY</li>
               <li>Catskill, NY</li>
               <li>Kingston, NY</li>
@@ -84,7 +84,7 @@ export default function Footer() {
               <a
                 href="#"
                 aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-forest"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
               >
                 <svg
                   className="h-5 w-5"
@@ -98,7 +98,7 @@ export default function Footer() {
               <a
                 href="#"
                 aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-forest"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
               >
                 <svg
                   className="h-5 w-5"
@@ -112,7 +112,7 @@ export default function Footer() {
               <a
                 href="#"
                 aria-label="Google Business"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-forest"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
               >
                 <svg
                   className="h-5 w-5"
@@ -129,7 +129,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-8 text-center text-sm text-stone-400">
+        <div className="mt-12 border-t border-white/10 pt-8 text-center text-sm text-white/40">
           <p>
             &copy; {new Date().getFullYear()} Green Ridge Landscaping. All rights
             reserved.

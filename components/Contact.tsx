@@ -24,7 +24,7 @@ export default function Contact() {
 
     const el = sectionRef.current;
     if (el) {
-      el.querySelectorAll(".fade-section").forEach((child) =>
+      el.querySelectorAll(".fade-section, .slide-left, .slide-right").forEach((child) =>
         observer.observe(child)
       );
     }
@@ -40,36 +40,36 @@ export default function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="bg-stone-50 px-6 py-24 md:py-32"
+      className="wave-divider bg-forest-dark px-6 pt-32 pb-24 md:pb-32"
     >
       <div className="mx-auto max-w-6xl">
-        <div className="fade-section text-center">
-          <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-forest">
+        <div className="slide-left">
+          <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-sage">
             Get in Touch
           </h2>
-          <h3 className="mt-3 text-4xl font-bold text-stone-800 md:text-5xl">
+          <h3 className="mt-3 font-serif text-4xl font-bold text-white md:text-5xl">
             Request a Free Estimate
           </h3>
         </div>
 
-        <div className="mt-12 grid gap-12 lg:grid-cols-2">
-          {/* Info + Map */}
-          <div className="fade-section space-y-8">
+        <div className="mt-12 grid gap-12 lg:grid-cols-5">
+          {/* Info side */}
+          <div className="slide-left delay-100 space-y-8 lg:col-span-2">
             <div>
-              <h4 className="text-lg font-bold text-stone-800">Service Area</h4>
-              <p className="mt-2 text-stone-600">
+              <h4 className="text-lg font-bold text-white">Service Area</h4>
+              <p className="mt-2 text-white/60">
                 Serving the Hudson Valley including Hudson, Catskill, Kingston,
                 Rhinebeck, Saugerties, and surrounding communities.
               </p>
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-stone-800">Hours</h4>
+              <h4 className="text-lg font-bold text-white">Hours</h4>
               <div className="mt-2 space-y-1">
                 {hours.map((h) => (
                   <div
                     key={h.days}
-                    className="flex justify-between text-stone-600"
+                    className="flex justify-between text-white/60"
                   >
                     <span>{h.days}</span>
                     <span
@@ -83,8 +83,8 @@ export default function Contact() {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-stone-800">Contact</h4>
-              <p className="mt-2 text-stone-600">
+              <h4 className="text-lg font-bold text-white">Contact</h4>
+              <p className="mt-2 text-white/60">
                 Phone: (518) 555-0147
                 <br />
                 Email: info@greenridgelandscaping.com
@@ -92,7 +92,7 @@ export default function Contact() {
             </div>
 
             {/* Interactive Map */}
-            <div className="overflow-hidden rounded-2xl border border-stone-200">
+            <div className="overflow-hidden rounded-2xl">
               <iframe
                 title="Green Ridge Landscaping Service Area"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-74.1000%2C42.0500%2C-73.7000%2C42.3500&layer=mapnik&marker=42.2529%2C-73.7910"
@@ -105,9 +105,9 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="fade-section delay-200">
-            <div className="rounded-2xl border border-stone-200 bg-white p-8 shadow-sm">
+          {/* Floating white form card */}
+          <div className="slide-right delay-200 lg:col-span-3">
+            <div className="rounded-2xl bg-white p-8 shadow-2xl shadow-black/20">
               <h4 className="text-xl font-bold text-stone-800">
                 Free Estimate Request
               </h4>

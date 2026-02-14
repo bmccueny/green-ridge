@@ -28,15 +28,15 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 shadow-lg shadow-stone-200/50 backdrop-blur-sm"
+          ? "bg-forest shadow-lg shadow-forest-dark/30"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className={`text-2xl font-bold tracking-tight ${scrolled ? "text-stone-800" : "text-white"}`}>
-            Green<span className="text-forest"> Ridge</span>
+          <span className="text-2xl font-bold tracking-tight text-white">
+            Green<span className="text-sage"> Ridge</span>
           </span>
         </Link>
 
@@ -44,39 +44,35 @@ export default function Navbar() {
         <div className="hidden items-center gap-8 md:flex">
           <a
             href="/#about"
-            className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-forest ${
-              scrolled ? "text-stone-600" : "text-white/80"
-            }`}
+            className="text-sm font-medium uppercase tracking-wider text-white/80 transition-colors hover:text-sage"
           >
             About
           </a>
           <a
             href="/#services"
-            className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-forest ${
-              scrolled ? "text-stone-600" : "text-white/80"
-            }`}
+            className="text-sm font-medium uppercase tracking-wider text-white/80 transition-colors hover:text-sage"
           >
             Services
           </a>
           <a
             href="/#gallery"
-            className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-forest ${
-              scrolled ? "text-stone-600" : "text-white/80"
-            }`}
+            className="text-sm font-medium uppercase tracking-wider text-white/80 transition-colors hover:text-sage"
           >
             Gallery
           </a>
           <a
             href="/#contact"
-            className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-forest ${
-              scrolled ? "text-stone-600" : "text-white/80"
-            }`}
+            className="text-sm font-medium uppercase tracking-wider text-white/80 transition-colors hover:text-sage"
           >
             Contact
           </a>
           <Link
             href="/#contact"
-            className="rounded-full bg-forest px-6 py-2 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-forest-dark"
+            className={`rounded-full px-6 py-2 text-sm font-bold uppercase tracking-wider transition-colors ${
+              scrolled
+                ? "bg-white text-forest hover:bg-sage-light"
+                : "bg-forest px-6 py-2 text-white hover:bg-forest-dark"
+            }`}
           >
             Free Estimate
           </Link>
@@ -89,41 +85,41 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-0.5 w-6 transition-all duration-300 ${
-              scrolled ? "bg-stone-800" : "bg-white"
-            } ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
+            className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+              mobileOpen ? "translate-y-2 rotate-45" : ""
+            }`}
           />
           <span
-            className={`block h-0.5 w-6 transition-all duration-300 ${
-              scrolled ? "bg-stone-800" : "bg-white"
-            } ${mobileOpen ? "opacity-0" : ""}`}
+            className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+              mobileOpen ? "opacity-0" : ""
+            }`}
           />
           <span
-            className={`block h-0.5 w-6 transition-all duration-300 ${
-              scrolled ? "bg-stone-800" : "bg-white"
-            } ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
+            className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+              mobileOpen ? "-translate-y-2 -rotate-45" : ""
+            }`}
           />
         </button>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 top-0 z-40 bg-white transition-transform duration-300 md:hidden ${
+        className={`fixed inset-0 top-0 z-40 bg-forest-dark transition-transform duration-300 md:hidden ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex items-center justify-between px-6 py-4">
           <Link
             href="/"
-            className="text-2xl font-bold tracking-tight text-stone-800"
+            className="text-2xl font-bold tracking-tight text-white"
             onClick={() => setMobileOpen(false)}
           >
-            Green<span className="text-forest"> Ridge</span>
+            Green<span className="text-sage"> Ridge</span>
           </Link>
           <button
             onClick={() => setMobileOpen(false)}
             aria-label="Close menu"
-            className="text-3xl text-stone-800"
+            className="text-3xl text-white"
           >
             &times;
           </button>
@@ -131,35 +127,35 @@ export default function Navbar() {
         <div className="flex flex-col items-center gap-8 pt-16">
           <a
             href="/#about"
-            className="text-xl font-medium uppercase tracking-wider text-stone-600 hover:text-forest"
+            className="text-xl font-medium uppercase tracking-wider text-white/80 hover:text-sage"
             onClick={() => setMobileOpen(false)}
           >
             About
           </a>
           <a
             href="/#services"
-            className="text-xl font-medium uppercase tracking-wider text-stone-600 hover:text-forest"
+            className="text-xl font-medium uppercase tracking-wider text-white/80 hover:text-sage"
             onClick={() => setMobileOpen(false)}
           >
             Services
           </a>
           <a
             href="/#gallery"
-            className="text-xl font-medium uppercase tracking-wider text-stone-600 hover:text-forest"
+            className="text-xl font-medium uppercase tracking-wider text-white/80 hover:text-sage"
             onClick={() => setMobileOpen(false)}
           >
             Gallery
           </a>
           <a
             href="/#contact"
-            className="text-xl font-medium uppercase tracking-wider text-stone-600 hover:text-forest"
+            className="text-xl font-medium uppercase tracking-wider text-white/80 hover:text-sage"
             onClick={() => setMobileOpen(false)}
           >
             Contact
           </a>
           <Link
             href="/#contact"
-            className="rounded-full bg-forest px-8 py-3 text-lg font-bold uppercase tracking-wider text-white hover:bg-forest-dark"
+            className="rounded-full bg-white px-8 py-3 text-lg font-bold uppercase tracking-wider text-forest hover:bg-sage-light"
             onClick={() => setMobileOpen(false)}
           >
             Free Estimate
